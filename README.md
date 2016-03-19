@@ -50,7 +50,7 @@ var getData = function() {
 getData();
 
 // Log the `myData` variable: prints "undefined", because `getData` had not yet retrieved the data
-console.log(myData)
+console.log(myData);
 ```
 
 ### Callback Functions
@@ -69,7 +69,7 @@ $.get('PATH-TO-DATA', function(error, data) {
  myData = data;
 
  // Run a function that uses `myData`.
- buildGraph()
+ buildGraph();
 });
  ```
 
@@ -86,7 +86,7 @@ var processData = function(error, data) {
  myData = data;
 
  // Run a function that uses `myData`.
- buildGraph()
+ buildGraph();
 };
 
 // A method that accepts two parameters: a URL to a data resource,
@@ -97,7 +97,7 @@ $.get('PATH-TO-DATA', processData);
 ### Method Chaining
 Another common structure for working with asynchronous requests is to **chain** different methods together. You'll notice in the example above we didn't work with the object _returned_ by our AJAX call (we just performed operations with the data _within_ it). However, working with the object returned by the AJAX call provides us with a cleaner syntax for describing our requests and queueing up multiple requests.
 
-The object that is returned by an AJAX call is called a _Promise_, which is an request that is expected to complete, but has not yet completed ([more info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)). Promise objects, also referred to as [defered objects](http://api.jquery.com/deferred/), have a variety of accessible methods that allow us to _chain_ multiple requests together (i.e., do this, then do this, then do this, etc.). While this example explains the jQuery AJAX syntax, many libraries leverage the concept of a promise to chain together multiple requests:
+The object that is returned by an AJAX call is called a _Promise_, which is a request that is expected to complete, but has not yet completed ([more info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)). Promise objects, also referred to as [defered objects](http://api.jquery.com/deferred/), have a variety of accessible methods that allow us to _chain_ multiple requests together (i.e., do this, then do this, then do this, etc.). While this example explains the jQuery AJAX syntax, many libraries leverage the concept of a promise to chain together multiple requests:
 
 ```javascript
 // Stage an AJAX request, and THEN do something with the results
@@ -138,7 +138,7 @@ $.get('SEARCH-BY-NAME').then(
 ```
 
 ## jQuery AJAX Calls
-AJAX stands for **A**synchronous **J**avaScript **A**nd **X***ML. This family of methods provides developers a series of tools for loading data into a web application without reloading the page. The jQuery library provides a simplified syntax for interacting with data being provided by other servers. It provides methods for both retrieving information (`get`) and well as sending information (`post`) to servers. This module focuses on the `get` method, which is actually just a [shorthand](https://api.jquery.com/category/ajax/shorthand-methods/) for a generalized AJAX call.
+AJAX stands for **A**synchronous **J**avaScript **A**nd **X**ML. This family of methods provides developers a series of tools for loading data into a web application without reloading the page. The jQuery library provides a simplified syntax for interacting with data being provided by other servers. It provides methods for both retrieving information (`get`) and well as sending information (`post`) to servers. This module focuses on the `get` method, which is actually just a [shorthand](https://api.jquery.com/category/ajax/shorthand-methods/) for a generalized AJAX call.
 
 The simplest approach for requesting data is to provide a URL to a specified data resource. For example, you may want to navigate to the URL of a REST API that returns data given the parameters specified in the URL.
 
@@ -159,7 +159,26 @@ $.get('https://api.spotify.com/v1/search?q=adele&type=artist', function(error, d
 ## D3 Methods
 The D3 visualization library provides a variety of methods for parsing data stored in specified formats. Here, we'll explain how to use the `d3.csv` method to read comma-seperated-values files. In order to read `.csv` files into a browser, you **must be running a local server**, as your browser does not have permission to read .csv files directly from your machine. Imagine you had a `.csv` that held this tabular data:
 
-** INSERT TABLE HERE. **
 
+| student_id |	exam1	| exam2 |
+| ------------- |  ------------- |------------- |
+| 38462	| 0.85	| 0.89 |
+| 82838 |	0.92	| 0.92 |
+|48573	| 0.85	| 0.8 |
+| 34983	| 0.74	| 0.76 |
+| 43026	| 0.92	| 0.88 |
+| 23487	| 0.71	| 0.79 |
+| 23473	| 0.83	| 0.88 |
+
+THe `d3.csv` method would allow you to read this into your application, and would return an **array of objects**, where each row in the `.csv` file is an object whose keys are your columns names (in this case, `student_id`, `exam1`, and `exam2`). Here's the syntax for making the request (keep in mind, this is also an **asynchronous** call):
+
+```javascript
+d3.csv('PATH-TO-DATA.csv', function(error, data){
+  console.log(data[0]); // {student_id:"38462", exam1:".085", exam2:"0.89"}
+
+  // Do something with your data here
+});
+
+```
 
 ## Firebase
