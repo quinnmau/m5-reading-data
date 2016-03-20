@@ -7,14 +7,12 @@ In order to visualize data on the web, you'll obviously need to read some data i
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-
 - [Resources](#resources)
 - [Asynchronous Requests](#asynchronous-requests)
   - [Callback Functions](#callback-functions)
   - [Method Chaining](#method-chaining)
 - [jQuery AJAX Calls](#jquery-ajax-calls)
 - [D3 Methods](#d3-methods)
-- [Firebase](#firebase)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -155,6 +153,7 @@ $.get('https://api.spotify.com/v1/search?q=adele&type=artist', function(error, d
 });
 ```
 
+For practice using jQuery AJAX calls, see [exercise-1](exercise-1).
 
 ## D3 Methods
 The D3 visualization library provides a variety of methods for parsing data stored in specified formats. Here, we'll explain how to use the `d3.csv` method to read comma-seperated-values files. In order to read `.csv` files into a browser, you **must be running a local server**, as your browser does not have permission to read .csv files directly from your machine. Imagine you had a `.csv` that held this tabular data:
@@ -181,4 +180,4 @@ d3.csv('PATH-TO-DATA.csv', function(error, data){
 
 ```
 
-## Firebase
+For practice using D3 methods to read in data, see [exercise-2](exercise-2).

@@ -7,6 +7,6 @@ In this exercise, you'll use the `d3.csv` function to read data into your web ap
 You may find the following resources helpful:
 
 - [D3.csv Docs](https://github.com/mbostock/d3/wiki/CSV)
-- [INSERT JQUERY TABLE LINK](PUT-URL-HERE)
+- [HTML Tables](http://www.w3schools.com/html/html_tables.asp)
 
 See the `complete` branch for answers.

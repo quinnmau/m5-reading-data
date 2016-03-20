@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M5: Exercise 1</title>
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+  <!-- Read in JavaScript files AFTER reading in jQuery if you're using the jQuery library -->
+  <script type='text/javascript' src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+      <h1>Welcome to Module 5 Exercise 1</h1>
+      <p>To complete this exercise, edit your <code>main.js</code> file (all in the <code>searchSongs</code> function).Your aim is to understand how the <code>$.ajax</code> function reads data into a web application., and practice manipulating HTML elements using that data.
+      </p>
+      <div class="instructions">
+        <ul>
+          <li>Empty the <code>image-div</code> element</li>
+          <li>Get the value from the input box</li>
+          <li>Make an AXAX request to the <code>songURL</code> + value from the input</li>
+          <li>THEN, for each item that is returned, append an image with the image associated with the song. Note, the array of data you want is stored in <code>tracks.items</code> (of your returned data), and the image URLs are stored in <code>d.album.images[0].url</code> (of each element, <code>d</code>)</li>
+        </ul>
+      </div>
+      <hr />
+      <section id="sandbox">
+        <div class="form-group">
+          <label for="search">Spotify search:</label>
+          <input name="search" placeholder="Enter your search.." class="form-control"></input>
+        </div>
+        <button id="search-btn" class="btn btn-primary">Search</button>
+        <p>Images should go in the <code>&ltdiv&gt</code> below with ID <code>image-div</code></p>
+        <div id="image-div" class="container"></div>
+      </section>
+  </body>
+</html>
